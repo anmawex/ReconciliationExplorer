@@ -96,6 +96,42 @@ function MyComponent() {
 }
 ```
 
+## 📊 Feature: Dashboard
+
+El módulo de dashboard incluye:
+
+- ✅ Layout principal con Navbar y Sidebar
+- ✅ Tarjetas de estadísticas con gradientes modernos
+- ✅ Actividad reciente con timestamps
+- ✅ Navegación colapsable
+- ✅ Información del usuario en navbar
+- ✅ Estados de carga y error
+- ✅ Gestión de estado con Zustand
+- ✅ Datos mock para desarrollo
+- ✅ Diseño responsive
+- ✅ Animaciones suaves
+
+### Uso del Hook de Dashboard
+
+```typescript
+import { useDashboardData } from '@/features/dashboard';
+
+function MyComponent() {
+  const { stats, recentActivity, isLoading, error, refetch } = useDashboardData();
+
+  // Tu lógica aquí
+}
+```
+
+### Componentes del Dashboard
+
+- **StatsCard**: Tarjeta de estadística con icono y valor
+- **RecentActivity**: Lista de actividad reciente
+- **Navbar**: Barra de navegación superior
+- **Sidebar**: Menú lateral de navegación
+- **MainLayout**: Layout principal para páginas protegidas
+
+
 ## 🎨 Buenas Prácticas Implementadas
 
 ### 1. **Separación de Responsabilidades**

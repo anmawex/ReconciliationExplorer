@@ -1,16 +1,10 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import { LoginPage } from '../features/auth';
-import { useAuth } from '../features/auth';
+import { LoginPage, useAuth } from '../features/auth';
+import { DashboardPage } from '../features/dashboard';
+import { MainLayout } from '../layouts/MainLayout';
 
-// Placeholder components
-const DashboardPage: React.FC = () => (
-  <div style={{ padding: '2rem' }}>
-    <h1>Dashboard</h1>
-    <p>Bienvenido al dashboard</p>
-  </div>
-);
-
+// 404 Page
 const NotFoundPage: React.FC = () => (
   <div style={{ padding: '2rem', textAlign: 'center' }}>
     <h1>404 - Página no encontrada</h1>
@@ -33,20 +27,49 @@ const ProtectedRoute: React.FC<ProtectedRouteProps> = ({ children }) => {
   return <>{children}</>;
 };
 
+// Public Route Component (redirects to dashboard if authenticated)
+const PublicRoute: React.FC<ProtectedRouteProps> = ({ children }) => {
+  const { isAuthenticated } = useAuth();
+
+  if (isAuthenticated) {
+    return <Navigate to="/dashboard" replace />;
+  }
+
+  return <>{children}</>;
+};
+
 export const AppRoutes: React.FC = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/login" element={<LoginPage />} />
+        {/* Public routes */}
         <Route
-          path="/dashboard"
+          path="/login"
           element={
-            <ProtectedRoute>
-              <DashboardPage />
-            </ProtectedRoute>
+            <PublicRoute>
+              <LoginPage />
+            </PublicRoute>
           }
         />
-        <Route path="/" element={<Navigate to="/login" replace />} />
+
+        {/* Protected routes with layout */}
+        <Route
+          element={
+            <ProtectedRoute>
+              <MainLayout />
+            </ProtectedRoute>
+          }
+        >
+          <Route path="/dashboard" element={<DashboardPage />} />
+          {/* Add more protected routes here as needed */}
+          {/* <Route path="/reconciliations" element={<ReconciliationsPage />} /> */}
+          {/* <Route path="/uploads" element={<UploadsPage />} /> */}
+          {/* <Route path="/reports" element={<ReportsPage />} /> */}
+          {/* <Route path="/settings" element={<SettingsPage />} /> */}
+        </Route>
+
+        {/* Redirects */}
+        <Route path="/" element={<Navigate to="/dashboard" replace />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </BrowserRouter>
