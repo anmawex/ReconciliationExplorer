@@ -2,7 +2,6 @@ import React from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { LoginPage, useAuth } from '../features/auth';
 import { DashboardPage } from '../features/dashboard';
-import { MainLayout } from '../layouts/MainLayout';
 
 // 404 Page
 const NotFoundPage: React.FC = () => (
@@ -52,21 +51,20 @@ export const AppRoutes: React.FC = () => {
           }
         />
 
-        {/* Protected routes with layout */}
+        {/* Protected routes */}
         <Route
+          path="/dashboard"
           element={
             <ProtectedRoute>
-              <MainLayout />
+              <DashboardPage />
             </ProtectedRoute>
           }
-        >
-          <Route path="/dashboard" element={<DashboardPage />} />
-          {/* Add more protected routes here as needed */}
-          {/* <Route path="/reconciliations" element={<ReconciliationsPage />} /> */}
-          {/* <Route path="/uploads" element={<UploadsPage />} /> */}
-          {/* <Route path="/reports" element={<ReportsPage />} /> */}
-          {/* <Route path="/settings" element={<SettingsPage />} /> */}
-        </Route>
+        />
+        {/* Add more protected routes here as needed */}
+        {/* <Route path="/reconciliations" element={<ProtectedRoute><ReconciliationsPage /></ProtectedRoute>} /> */}
+        {/* <Route path="/uploads" element={<ProtectedRoute><UploadsPage /></ProtectedRoute>} /> */}
+        {/* <Route path="/reports" element={<ProtectedRoute><ReportsPage /></ProtectedRoute>} /> */}
+        {/* <Route path="/settings" element={<ProtectedRoute><SettingsPage /></ProtectedRoute>} /> */}
 
         {/* Redirects */}
         <Route path="/" element={<Navigate to="/dashboard" replace />} />
