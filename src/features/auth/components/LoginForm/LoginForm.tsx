@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useNavigate } from 'react-router-dom';
-import { Input, Button } from '../../../../shared/components';
+import { Input, ButtonLegacy } from '../../../../shared/components';
 import { useAuth } from '../../hooks/useAuth';
 import { loginSchema, type LoginFormData } from '../../validators/auth.validators';
 import './LoginForm.css';
@@ -145,7 +145,7 @@ export const LoginForm: React.FC = () => {
         </div>
       </div>
 
-      <Button
+      <ButtonLegacy
         type="submit"
         variant="primary"
         size="lg"
@@ -153,7 +153,7 @@ export const LoginForm: React.FC = () => {
         isLoading={isLoading}
       >
         Iniciar sesión
-      </Button>
+      </ButtonLegacy>
 
       <div className="login-form-footer">
         <p className="signup-text">
