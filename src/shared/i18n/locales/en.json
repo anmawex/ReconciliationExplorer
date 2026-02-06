@@ -1,0 +1,113 @@
+{
+  "common": {
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "close": "Close",
+    "save": "Save",
+    "delete": "Delete",
+    "clear": "Clear",
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success"
+  },
+  "auth": {
+    "login": {
+      "title": "Welcome back",
+      "subtitle": "Enter your credentials to access your account",
+      "email": "Email",
+      "emailPlaceholder": "you@email.com",
+      "password": "Password",
+      "passwordPlaceholder": "••••••••",
+      "showPassword": "Show password",
+      "hidePassword": "Hide password",
+      "rememberMe": "Remember me",
+      "forgotPassword": "Forgot your password?",
+      "submit": "Sign in",
+      "submitting": "Signing in...",
+      "noAccount": "Don't have an account?",
+      "signUp": "Sign up here"
+    },
+    "logout": {
+      "button": "Logout",
+      "confirmTitle": "Confirm logout",
+      "confirmDescription": "Are you sure you want to log out? You will need to log in again to access the dashboard.",
+      "confirmButton": "Log out"
+    }
+  },
+  "dashboard": {
+    "header": {
+      "title": "Kallibra",
+      "subtitle": "Analyze and reconcile {{count}} transactions",
+      "refreshData": "Refresh Data"
+    },
+    "stats": {
+      "reconciled": "Reconciled",
+      "pending": "Pending",
+      "inconsistent": "Inconsistent",
+      "totalVolume": "Total Volume",
+      "ofTotal": "{{percentage}}% of total",
+      "awaitingReview": "Awaiting review",
+      "requiresAttention": "Requires attention",
+      "reconciledAmount": "{{amount}} reconciled"
+    },
+    "chart": {
+      "statusDistribution": "Status Distribution",
+      "noTransactions": "No transactions to display"
+    }
+  },
+  "filters": {
+    "dataSource": "Data Source",
+    "status": "Status",
+    "minAmount": "Min Amount",
+    "maxAmount": "Max Amount",
+    "allSources": "All Sources",
+    "allStatuses": "All Statuses",
+    "noLimit": "No limit",
+    "clear": "Clear",
+    "showing": "Showing",
+    "of": "of",
+    "transactions": "transactions"
+  },
+  "table": {
+    "date": "Date",
+    "reference": "Reference",
+    "amount": "Amount",
+    "currency": "Currency",
+    "source": "Source",
+    "status": "Status",
+    "actions": "Actions",
+    "columns": "Columns",
+    "toggleColumns": "Toggle columns",
+    "selected": "{{count}} selected",
+    "selectAll": "Select all",
+    "selectRow": "Select row",
+    "reconcile": "Reconcile",
+    "markReconciled": "Mark Reconciled",
+    "markInconsistent": "Mark Inconsistent",
+    "page": "Page {{current}} of {{total}}",
+    "previous": "Previous",
+    "next": "Next"
+  },
+  "reconciliation": {
+    "modal": {
+      "title": "Reconcile Transaction",
+      "description": "Find a match for the selected transaction.",
+      "selectedTransaction": "Selected Transaction",
+      "suggestedMatches": "Suggested Matches",
+      "matchCount": "({{count}})",
+      "reconcileButton": "Reconcile",
+      "noMatches": "No automatic matches found.",
+      "cancel": "Cancel"
+    }
+  },
+  "status": {
+    "reconciled": "Reconciled",
+    "pending": "Pending",
+    "inconsistent": "Inconsistent"
+  },
+  "sources": {
+    "bank": "Bank",
+    "paymentProvider": "Payment Provider",
+    "erp": "ERP"
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "common": {
+    "cancel": "Cancelar",
+    "confirm": "Confirmar",
+    "close": "Cerrar",
+    "save": "Guardar",
+    "delete": "Eliminar",
+    "clear": "Limpiar",
+    "loading": "Cargando...",
+    "error": "Error",
+    "success": "Éxito"
+  },
+  "auth": {
+    "login": {
+      "title": "Bienvenido de nuevo",
+      "subtitle": "Ingresa tus credenciales para acceder a tu cuenta",
+      "email": "Correo electrónico",
+      "emailPlaceholder": "tu@email.com",
+      "password": "Contraseña",
+      "passwordPlaceholder": "••••••••",
+      "showPassword": "Mostrar contraseña",
+      "hidePassword": "Ocultar contraseña",
+      "rememberMe": "Recuérdame",
+      "forgotPassword": "¿Olvidaste tu contraseña?",
+      "submit": "Iniciar sesión",
+      "submitting": "Iniciando sesión...",
+      "noAccount": "¿No tienes una cuenta?",
+      "signUp": "Regístrate aquí"
+    },
+    "logout": {
+      "button": "Cerrar sesión",
+      "confirmTitle": "Confirmar cierre de sesión",
+      "confirmDescription": "¿Estás seguro de que deseas cerrar sesión? Tendrás que volver a iniciar sesión para acceder al dashboard.",
+      "confirmButton": "Cerrar sesión"
+    }
+  },
+  "dashboard": {
+    "header": {
+      "title": "Kallibra",
+      "subtitle": "Analiza y concilia {{count}} transacciones",
+      "refreshData": "Actualizar Datos"
+    },
+    "stats": {
+      "reconciled": "Conciliado",
+      "pending": "Pendiente",
+      "inconsistent": "Inconsistente",
+      "totalVolume": "Volumen Total",
+      "ofTotal": "{{percentage}}% del total",
+      "awaitingReview": "En espera de revisión",
+      "requiresAttention": "Requiere atención",
+      "reconciledAmount": "{{amount}} conciliado"
+    },
+    "chart": {
+      "statusDistribution": "Distribución de Estados",
+      "noTransactions": "No hay transacciones para mostrar"
+    }
+  },
+  "filters": {
+    "dataSource": "Fuente de Datos",
+    "status": "Estado",
+    "minAmount": "Monto Mínimo",
+    "maxAmount": "Monto Máximo",
+    "allSources": "Todas las Fuentes",
+    "allStatuses": "Todos los Estados",
+    "noLimit": "Sin límite",
+    "clear": "Limpiar",
+    "showing": "Mostrando",
+    "of": "de",
+    "transactions": "transacciones"
+  },
+  "table": {
+    "date": "Fecha",
+    "reference": "Referencia",
+    "amount": "Monto",
+    "currency": "Moneda",
+    "source": "Fuente",
+    "status": "Estado",
+    "actions": "Acciones",
+    "columns": "Columnas",
+    "toggleColumns": "Alternar columnas",
+    "selected": "{{count}} seleccionados",
+    "selectAll": "Seleccionar todo",
+    "selectRow": "Seleccionar fila",
+    "reconcile": "Conciliar",
+    "markReconciled": "Marcar Conciliado",
+    "markInconsistent": "Marcar Inconsistente",
+    "page": "Página {{current}} de {{total}}",
+    "previous": "Anterior",
+    "next": "Siguiente"
+  },
+  "reconciliation": {
+    "modal": {
+      "title": "Conciliar Transacción",
+      "description": "Busca una coincidencia para la transacción seleccionada.",
+      "selectedTransaction": "Transacción Seleccionada",
+      "suggestedMatches": "Coincidencias Sugeridas",
+      "matchCount": "({{count}})",
+      "reconcileButton": "Conciliar",
+      "noMatches": "No se encontraron coincidencias automáticas.",
+      "cancel": "Cancelar"
+    }
+  },
+  "status": {
+    "reconciled": "Conciliado",
+    "pending": "Pendiente",
+    "inconsistent": "Inconsistente"
+  },
+  "sources": {
+    "bank": "Banco",
+    "paymentProvider": "Proveedor de Pago",
+    "erp": "ERP"
+  }
+}

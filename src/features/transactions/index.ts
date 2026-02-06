@@ -1,0 +1,6 @@
+// Transactions feature barrel export
+export * from './types';
+export { TransactionsTable } from './components/TransactionsTable';
+export { StatusBadge } from './components/StatusBadge';
+export { useTransactions } from './hooks/useTransactions';
+export { mockTransactions } from './data/mockTransactions';
