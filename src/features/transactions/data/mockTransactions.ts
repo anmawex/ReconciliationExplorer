@@ -51,6 +51,27 @@ function generateStatus(): TransactionStatus {
 export function generateMockTransactions(count: number = 4000): Transaction[] {
   const transactions: Transaction[] = [];
   
+  // Agregar casos de prueba garantizados para conciliación
+  transactions.push({
+    id: `txn_test_01`,
+    date: new Date().toISOString(),
+    reference: 'TEST-MATCH-001-A',
+    amount: 1234.56,
+    currency: 'USD',
+    source: 'Bank',
+    status: 'pending',
+  });
+
+  transactions.push({
+    id: `txn_test_02`,
+    date: new Date().toISOString(),
+    reference: 'TEST-MATCH-001-B',
+    amount: 1234.56,
+    currency: 'USD',
+    source: 'ERP',
+    status: 'pending',
+  });
+
   for (let i = 0; i < count; i++) {
     transactions.push({
       id: `txn_${i.toString().padStart(6, '0')}`,

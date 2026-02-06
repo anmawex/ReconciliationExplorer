@@ -12,7 +12,7 @@ import {
   type VisibilityState,
 } from '@tanstack/react-table';
 import { format } from 'date-fns';
-import { ArrowUpDown, ChevronLeft, ChevronRight, Check, AlertTriangle, Columns } from 'lucide-react';
+import { ArrowUpDown, ChevronLeft, ChevronRight, Check, AlertTriangle, Columns, RefreshCw } from 'lucide-react';
 import type { Transaction, TransactionStatus } from '../types';
 import { StatusBadge } from './StatusBadge';
 import { Button } from '@/shared/components/Button/button';
@@ -31,6 +31,7 @@ interface TransactionsTableProps {
   transactions: Transaction[];
   onUpdateStatus: (id: string, status: TransactionStatus) => void;
   onBulkUpdateStatus: (ids: string[], status: TransactionStatus) => void;
+  onReconcile?: (transaction: Transaction) => void;
 }
 
 const columnHelper = createColumnHelper<Transaction>();
@@ -47,6 +48,7 @@ export function TransactionsTable({
   transactions,
   onUpdateStatus,
   onBulkUpdateStatus,
+  onReconcile,
 }: TransactionsTableProps) {
   const [sorting, setSorting] = useState<SortingState>([]);
   const [rowSelection, setRowSelection] = useState<RowSelectionState>({});
@@ -148,6 +150,15 @@ export function TransactionsTable({
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
+              {onReconcile && row.original.status !== 'reconciled' && (
+                <DropdownMenuItem
+                  onClick={() => onReconcile(row.original)}
+                >
+                  <RefreshCw className="mr-2 h-4 w-4" />
+                  Reconcile
+                </DropdownMenuItem>
+              )}
+              <DropdownMenuSeparator />
               <DropdownMenuItem
                 onClick={() => onUpdateStatus(row.original.id, 'reconciled')}
               >
@@ -161,12 +172,13 @@ export function TransactionsTable({
                 Mark Inconsistent
               </DropdownMenuItem>
             </DropdownMenuContent>
+
           </DropdownMenu>
         ),
         size: 100,
       }),
     ],
-    [onUpdateStatus]
+    [onUpdateStatus, onReconcile]
   );
 
   const table = useReactTable({

@@ -1,9 +1,15 @@
+import { useState } from 'react';
 import { Header } from '../../components';
 import { FilterPanel } from '@/features/filters';
 import { StatsSummary, StatusDistributionChart } from '@/features/insights';
 import { TransactionsTable, useTransactions } from '@/features/transactions';
+import { ReconciliationModal } from '@/features/reconciliation';
+import type { Transaction } from '@/features/transactions';
 
 export const DashboardPage = () => {
+  const [selectedTransaction, setSelectedTransaction] = useState<Transaction | null>(null);
+  const [isReconciliationModalOpen, setIsReconciliationModalOpen] = useState(false);
+
   const {
     filteredTransactions,
     filters,
@@ -13,7 +19,20 @@ export const DashboardPage = () => {
     refreshData,
     totalCount,
     filteredCount,
+    transactions, // Need all transactions for matching context
   } = useTransactions();
+
+  const handleReconcile = (transaction: Transaction) => {
+    setSelectedTransaction(transaction);
+    setIsReconciliationModalOpen(true);
+  };
+
+  const handleReconciliationComplete = (transactionIds: string[]) => {
+    bulkUpdateStatus(transactionIds, 'reconciled');
+    setIsReconciliationModalOpen(false);
+    setSelectedTransaction(null);
+  };
+
 
   return (
     <div className="flex min-h-screen flex-col bg-background">
@@ -36,8 +55,18 @@ export const DashboardPage = () => {
           transactions={filteredTransactions}
           onUpdateStatus={updateTransactionStatus}
           onBulkUpdateStatus={bulkUpdateStatus}
+          onReconcile={handleReconcile}
         />
       </div>
+
+      <ReconciliationModal
+        isOpen={isReconciliationModalOpen}
+        onClose={() => setIsReconciliationModalOpen(false)}
+        transaction={selectedTransaction}
+        candidates={transactions}
+        onReconcile={handleReconciliationComplete}
+      />
+
     </div>
   );
 };
