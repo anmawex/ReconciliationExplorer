@@ -41,6 +41,14 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        status: {
+          reconciled: "hsl(var(--status-reconciled) / <alpha-value>)",
+          "reconciled-bg": "hsl(var(--status-reconciled-bg) / <alpha-value>)",
+          pending: "hsl(var(--status-pending) / <alpha-value>)",
+          "pending-bg": "hsl(var(--status-pending-bg) / <alpha-value>)",
+          inconsistent: "hsl(var(--status-inconsistent) / <alpha-value>)",
+          "inconsistent-bg": "hsl(var(--status-inconsistent-bg) / <alpha-value>)",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",

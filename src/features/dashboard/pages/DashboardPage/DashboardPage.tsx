@@ -1,6 +1,6 @@
 import { Header } from '../../components';
 import { FilterPanel } from '@/features/filters';
-// import { StatsSummary, StatusDistributionChart } from '@/features/insights';
+import { StatsSummary, StatusDistributionChart } from '@/features/insights';
 import { TransactionsTable, useTransactions } from '@/features/transactions';
 
 export const DashboardPage = () => {
@@ -10,22 +10,19 @@ export const DashboardPage = () => {
     setFilters,
     updateTransactionStatus,
     bulkUpdateStatus,
-    // refreshData,
-    // totalCount,
+    refreshData,
+    totalCount,
     filteredCount,
   } = useTransactions();
-
-  const totalCount = 0;
-  const refreshData = () => {};
 
   return (
     <div className="flex min-h-screen flex-col bg-background">
       <Header transactionCount={totalCount} onRefresh={refreshData} />
       
-      {/* <div className="grid gap-4 px-6 py-4 md:grid-cols-[1fr_300px]">
+      <div className="grid gap-4 px-6 py-4 md:grid-cols-[1fr_300px]">
         <StatsSummary transactions={filteredTransactions} />
         <StatusDistributionChart transactions={filteredTransactions} />
-      </div> */}
+      </div>
       
       <FilterPanel
         filters={filters}
