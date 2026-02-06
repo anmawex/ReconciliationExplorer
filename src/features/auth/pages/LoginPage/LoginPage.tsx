@@ -1,5 +1,7 @@
 import React from 'react';
 import { LoginForm } from '../../components';
+import { LanguageSwitcher } from '@/shared/components';
+import { ThemeToggle } from '@/shared/theme';
 import './LoginPage.css';
 
 export const LoginPage: React.FC = () => {
@@ -9,6 +11,12 @@ export const LoginPage: React.FC = () => {
         <div className="login-page-gradient login-page-gradient-1"></div>
         <div className="login-page-gradient login-page-gradient-2"></div>
         <div className="login-page-gradient login-page-gradient-3"></div>
+      </div>
+
+      {/* Settings buttons in top right corner */}
+      <div className="login-page-settings">
+        <LanguageSwitcher />
+        <ThemeToggle />
       </div>
 
       <div className="login-page-content">

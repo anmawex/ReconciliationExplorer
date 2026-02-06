@@ -18,7 +18,7 @@ export function StatsCard({ title, value, description, variant = 'default' }: St
   return (
     <div className={cn('rounded-lg border bg-card p-4', variantStyles[variant])}>
       <p className="text-sm font-medium text-muted-foreground">{title}</p>
-      <p className="mt-1 text-xl font-semibold text-foreground sm:text-2xl truncate" title={String(value)}>
+      <p className="mt-1 text-base font-semibold text-foreground sm:text-lg md:text-xl lg:text-2xl whitespace-nowrap tracking-tight">
         {value}
       </p>
       {description && (

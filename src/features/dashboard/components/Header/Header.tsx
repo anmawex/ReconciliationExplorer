@@ -27,13 +27,30 @@ export function Header({ transactionCount, onRefresh }: HeaderProps) {
     <>
       <header className="border-b border-border bg-card px-6 py-4">
         <div className="flex items-center justify-between">
-          <div>
-            <h1 className="text-xl font-semibold text-foreground">
-              {t('dashboard.header.title')}
-            </h1>
-            <p className="text-sm text-muted-foreground">
-              {t('dashboard.header.subtitle', { count: transactionCount })}
-            </p>
+          <div className="flex items-center gap-4">
+            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-blue-500 to-purple-500 shadow-lg shadow-blue-500/20 text-white">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="h-6 w-6"
+              >
+                <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                <path d="M2 17l10 5 10-5" />
+                <path d="M2 12l10 5 10-5" />
+              </svg>
+            </div>
+            <div>
+              <h1 className="text-xl font-semibold text-foreground">
+                {t('dashboard.header.title')}
+              </h1>
+              <p className="text-sm text-muted-foreground">
+                {t('dashboard.header.subtitle', { count: transactionCount })}
+              </p>
+            </div>
           </div>
           <div className="flex items-center gap-2">
             <LanguageSwitcher />

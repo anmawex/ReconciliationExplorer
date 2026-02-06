@@ -76,10 +76,10 @@ export function StatusDistributionChart({ transactions }: StatusDistributionChar
             <PieChart>
               <Pie
                 data={chartData}
-                cx="50%"
+                cx="54%"
                 cy="50%"
-                innerRadius={50}
-                outerRadius={80}
+                innerRadius={40}
+                outerRadius={70}
                 paddingAngle={2}
                 dataKey="value"
               >
@@ -100,11 +100,13 @@ export function StatusDistributionChart({ transactions }: StatusDistributionChar
                   ];
                 }}
                 contentStyle={{
-                  backgroundColor: 'hsl(var(--background))',
+                  backgroundColor: 'hsl(var(--popover))',
                   border: '1px solid hsl(var(--border))',
                   borderRadius: '6px',
                   fontSize: '12px',
                 }}
+                itemStyle={{ color: 'hsl(var(--popover-foreground))' }}
+                labelStyle={{ color: 'hsl(var(--popover-foreground))' }}
               />
               <Legend
                 verticalAlign="middle"
@@ -112,6 +114,7 @@ export function StatusDistributionChart({ transactions }: StatusDistributionChar
                 layout="vertical"
                 iconType="circle"
                 iconSize={8}
+                wrapperStyle={{ paddingLeft: '20px' }}
                 formatter={(value: string) => (
                   <span className="text-xs text-foreground">{value}</span>
                 )}
