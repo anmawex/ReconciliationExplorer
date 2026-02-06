@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 import { PieChart, Pie, Cell, ResponsiveContainer, Legend, Tooltip } from 'recharts';
 import type { Transaction, TransactionStatus } from '@/features/transactions';
-import { Card, CardContent, CardHeader, CardTitle } from '@/features/insights/components/card';
+import { Card, CardContent, CardHeader, CardTitle } from '@/shared/components/card';
 
 interface StatusDistributionChartProps {
   transactions: Transaction[];

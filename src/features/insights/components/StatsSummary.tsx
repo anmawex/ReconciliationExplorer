@@ -23,7 +23,7 @@ export function StatsSummary({ transactions }: StatsSummaryProps) {
   );
 
   return (
-    <div className="grid grid-cols-2 gap-4 px-6 py-4 md:grid-cols-4">
+    <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
       <StatsCard
         title="Reconciled"
         value={stats.reconciled.toLocaleString()}
