@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import type { TransactionStatus } from '../types';
 import { cn } from '@/shared/lib/utils';
 
@@ -5,27 +6,18 @@ interface StatusBadgeProps {
   status: TransactionStatus;
 }
 
-const statusConfig: Record<TransactionStatus, { label: string; className: string }> = {
-  reconciled: {
-    label: 'Reconciled',
-    className: 'status-reconciled',
-  },
-  pending: {
-    label: 'Pending',
-    className: 'status-pending',
-  },
-  inconsistent: {
-    label: 'Inconsistent',
-    className: 'status-inconsistent',
-  },
+const statusClassNames: Record<TransactionStatus, string> = {
+  reconciled: 'status-reconciled',
+  pending: 'status-pending',
+  inconsistent: 'status-inconsistent',
 };
 
 export function StatusBadge({ status }: StatusBadgeProps) {
-  const config = statusConfig[status];
+  const { t } = useTranslation();
   
   return (
-    <span className={cn('status-badge', config.className)}>
-      {config.label}
+    <span className={cn('status-badge', statusClassNames[status])}>
+      {t(`status.${status}`)}
     </span>
   );
 }

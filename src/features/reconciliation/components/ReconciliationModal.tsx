@@ -1,4 +1,5 @@
 import { useMemo } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Check, AlertCircle } from 'lucide-react';
 import {
   Dialog,
@@ -27,6 +28,8 @@ export function ReconciliationModal({
   candidates,
   onReconcile,
 }: ReconciliationModalProps) {
+  const { t } = useTranslation();
+  
   const matches = useMemo(() => {
     if (!transaction) return [];
     return findPotentialMatches(transaction, candidates);
@@ -43,14 +46,16 @@ export function ReconciliationModal({
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="sm:max-w-[600px]">
         <DialogHeader>
-          <DialogTitle>Conciliar Transacción</DialogTitle>
+          <DialogTitle>{t('reconciliation.modal.title')}</DialogTitle>
           <DialogDescription>
-            Busca una coincidencia para la transacción seleccionada.
+            {t('reconciliation.modal.description')}
           </DialogDescription>
         </DialogHeader>
 
         <div className="py-4">
-          <h4 className="mb-2 text-sm font-medium text-muted-foreground">Transacción Seleccionada</h4>
+          <h4 className="mb-2 text-sm font-medium text-muted-foreground">
+            {t('reconciliation.modal.selectedTransaction')}
+          </h4>
           <div className="rounded-md border bg-muted/50 p-3">
             <div className="flex justify-between font-medium">
               <span>{transaction.reference}</span>
@@ -65,7 +70,7 @@ export function ReconciliationModal({
 
         <div className="py-2">
           <h4 className="mb-2 text-sm font-medium text-muted-foreground">
-            Coincidencias Sugeridas ({matches.length})
+            {t('reconciliation.modal.suggestedMatches')} {t('reconciliation.modal.matchCount', { count: matches.length })}
           </h4>
           {matches.length > 0 ? (
             <div className="space-y-2">
@@ -90,7 +95,7 @@ export function ReconciliationModal({
                     onClick={() => handleReconcile(match.id)}
                   >
                     <Check className="mr-2 h-4 w-4" />
-                    Conciliar
+                    {t('reconciliation.modal.reconcileButton')}
                   </Button>
                 </div>
               ))}
@@ -98,14 +103,14 @@ export function ReconciliationModal({
           ) : (
             <div className="flex flex-col items-center justify-center py-8 text-center text-muted-foreground">
               <AlertCircle className="mb-2 h-8 w-8 opacity-50" />
-              <p>No se encontraron coincidencias automáticas.</p>
+              <p>{t('reconciliation.modal.noMatches')}</p>
             </div>
           )}
         </div>
 
         <DialogFooter>
           <Button variant="outline" onClick={onClose}>
-            Cancelar
+            {t('reconciliation.modal.cancel')}
           </Button>
         </DialogFooter>
       </DialogContent>

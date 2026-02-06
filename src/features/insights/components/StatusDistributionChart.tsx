@@ -1,4 +1,5 @@
 import { useMemo } from 'react';
+import { useTranslation } from 'react-i18next';
 import { PieChart, Pie, Cell, ResponsiveContainer, Legend, Tooltip } from 'recharts';
 import type { Transaction, TransactionStatus } from '@/features/transactions';
 import { Card, CardContent, CardHeader, CardTitle } from '@/shared/components/card';
@@ -17,30 +18,37 @@ const getStatusColor = (status: TransactionStatus): string => {
   return colors[status];
 };
 
-const STATUS_LABELS: Record<TransactionStatus, string> = {
-  reconciled: 'Reconciled',
-  pending: 'Pending',
-  inconsistent: 'Inconsistent',
-};
-
 export function StatusDistributionChart({ transactions }: StatusDistributionChartProps) {
-  const chartData = useMemo(() => {
-    const counts: Record<TransactionStatus, number> = {
+  const { t } = useTranslation();
+
+  // Optimize: Calculate counts only when transactions change
+  const counts = useMemo(() => {
+    const statusCounts: Record<TransactionStatus, number> = {
       reconciled: 0,
       pending: 0,
       inconsistent: 0,
     };
 
-    for (const t of transactions) {
-      counts[t.status]++;
+    for (const txn of transactions) {
+      statusCounts[txn.status]++;
     }
+    return statusCounts;
+  }, [transactions]);
+
+  // Optimize: Apply labels only when language or counts change
+  const chartData = useMemo(() => {
+    const labels: Record<TransactionStatus, string> = {
+      reconciled: t('status.reconciled'),
+      pending: t('status.pending'),
+      inconsistent: t('status.inconsistent'),
+    };
 
     return (Object.keys(counts) as TransactionStatus[]).map((status) => ({
-      name: STATUS_LABELS[status],
+      name: labels[status],
       value: counts[status],
       status,
     }));
-  }, [transactions]);
+  }, [counts, t]);
 
   const total = useMemo(() => transactions.length, [transactions]);
 
@@ -48,10 +56,10 @@ export function StatusDistributionChart({ transactions }: StatusDistributionChar
     return (
       <Card>
         <CardHeader className="pb-2">
-          <CardTitle className="text-base font-medium">Status Distribution</CardTitle>
+          <CardTitle className="text-base font-medium">{t('dashboard.chart.statusDistribution')}</CardTitle>
         </CardHeader>
         <CardContent className="flex h-[200px] items-center justify-center text-muted-foreground">
-          No transactions to display
+          {t('dashboard.chart.noTransactions')}
         </CardContent>
       </Card>
     );
@@ -60,7 +68,7 @@ export function StatusDistributionChart({ transactions }: StatusDistributionChar
   return (
     <Card>
       <CardHeader className="pb-2">
-        <CardTitle className="text-base font-medium">Status Distribution</CardTitle>
+        <CardTitle className="text-base font-medium">{t('dashboard.chart.statusDistribution')}</CardTitle>
       </CardHeader>
       <CardContent>
         <div className="h-[200px]">

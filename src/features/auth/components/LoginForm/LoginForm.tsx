@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useNavigate } from 'react-router-dom';
 import { Loader2 } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { Input } from '../../../../shared/components';
 import { Button } from '../../../../shared/components/button';
 import { useAuth } from '../../hooks/useAuth';
@@ -10,6 +11,7 @@ import { loginSchema, type LoginFormData } from '../../validators/auth.validator
 import './LoginForm.css';
 
 export const LoginForm: React.FC = () => {
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const { login, isLoading, error, clearError } = useAuth();
   const [showPassword, setShowPassword] = useState(false);
@@ -41,9 +43,9 @@ export const LoginForm: React.FC = () => {
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="login-form" noValidate>
       <div className="login-form-header">
-        <h1 className="login-form-title">Bienvenido de nuevo</h1>
+        <h1 className="login-form-title">{t('auth.login.title')}</h1>
         <p className="login-form-subtitle">
-          Ingresa tus credenciales para acceder a tu cuenta
+          {t('auth.login.subtitle')}
         </p>
       </div>
 
@@ -69,8 +71,8 @@ export const LoginForm: React.FC = () => {
         <Input
           {...register('email')}
           type="email"
-          label="Correo electrónico"
-          placeholder="tu@email.com"
+          label={t('auth.login.email')}
+          placeholder={t('auth.login.emailPlaceholder')}
           error={errors.email?.message}
           fullWidth
           autoComplete="email"
@@ -81,8 +83,8 @@ export const LoginForm: React.FC = () => {
           <Input
             {...register('password')}
             type={showPassword ? 'text' : 'password'}
-            label="Contraseña"
-            placeholder="••••••••"
+            label={t('auth.login.password')}
+            placeholder={t('auth.login.passwordPlaceholder')}
             error={errors.password?.message}
             fullWidth
             autoComplete="current-password"
@@ -92,7 +94,7 @@ export const LoginForm: React.FC = () => {
             type="button"
             className="password-toggle"
             onClick={() => setShowPassword(!showPassword)}
-            aria-label={showPassword ? 'Ocultar contraseña' : 'Mostrar contraseña'}
+            aria-label={showPassword ? t('auth.login.hidePassword') : t('auth.login.showPassword')}
           >
             {showPassword ? (
               <svg
@@ -139,10 +141,10 @@ export const LoginForm: React.FC = () => {
               type="checkbox"
               className="remember-me-checkbox"
             />
-            <span>Recordarme</span>
+            <span>{t('auth.login.rememberMe')}</span>
           </label>
           <a href="/forgot-password" className="forgot-password-link">
-            ¿Olvidaste tu contraseña?
+            {t('auth.login.forgotPassword')}
           </a>
         </div>
       </div>
@@ -154,14 +156,14 @@ export const LoginForm: React.FC = () => {
         disabled={isLoading}
       >
         {isLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
-        {isLoading ? 'Iniciando sesión...' : 'Iniciar sesión'}
+        {isLoading ? t('auth.login.submitting') : t('auth.login.submit')}
       </Button>
 
       <div className="login-form-footer">
         <p className="signup-text">
-          ¿No tienes una cuenta?{' '}
+          {t('auth.login.noAccount')}{' '}
           <a href="/register" className="signup-link">
-            Regístrate aquí
+            {t('auth.login.signUp')}
           </a>
         </p>
       </div>

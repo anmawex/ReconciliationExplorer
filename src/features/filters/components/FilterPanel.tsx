@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import type {
 	TransactionFilters,
 	TransactionSource,
@@ -41,6 +42,8 @@ export function FilterPanel({
 	filteredCount,
 	totalCount,
 }: FilterPanelProps) {
+	const { t } = useTranslation();
+
 	const handleSourceChange = (value: string) => {
 		onFiltersChange({
 			...filters,
@@ -86,6 +89,19 @@ export function FilterPanel({
 		filters.minAmount !== null ||
 		filters.maxAmount !== null;
 
+	const getSourceLabel = (source: TransactionSource | "all") => {
+		if (source === "all") return t('filters.allSources');
+		if (source === "Bank") return t('sources.bank');
+		if (source === "Payment Provider") return t('sources.paymentProvider');
+		if (source === "ERP") return t('sources.erp');
+		return source;
+	};
+
+	const getStatusLabel = (status: TransactionStatus | "all") => {
+		if (status === "all") return t('filters.allStatuses');
+		return t(`status.${status}`);
+	};
+
 	return (
 		<div className="border-b border-border bg-card px-6 py-4">
 			<div className="flex flex-wrap items-end gap-4">
@@ -93,16 +109,16 @@ export function FilterPanel({
 					<Label
 						htmlFor="source"
 						className="text-xs font-medium text-muted-foreground">
-						Data Source
+						{t('filters.dataSource')}
 					</Label>
 					<Select value={filters.source} onValueChange={handleSourceChange}>
 						<SelectTrigger id="source" className="w-[180px]">
-							<SelectValue placeholder="All Sources" />
+							<SelectValue placeholder={t('filters.allSources')} />
 						</SelectTrigger>
 						<SelectContent>
 							{sources.map((source) => (
 								<SelectItem key={source} value={source}>
-									{source === "all" ? "All Sources" : source}
+									{getSourceLabel(source)}
 								</SelectItem>
 							))}
 						</SelectContent>
@@ -113,18 +129,16 @@ export function FilterPanel({
 					<Label
 						htmlFor="status"
 						className="text-xs font-medium text-muted-foreground">
-						Status
+						{t('filters.status')}
 					</Label>
 					<Select value={filters.status} onValueChange={handleStatusChange}>
 						<SelectTrigger id="status" className="w-[160px]">
-							<SelectValue placeholder="All Statuses" />
+							<SelectValue placeholder={t('filters.allStatuses')} />
 						</SelectTrigger>
 						<SelectContent>
 							{statuses.map((status) => (
 								<SelectItem key={status} value={status} className="capitalize">
-									{status === "all"
-										? "All Statuses"
-										: status.charAt(0).toUpperCase() + status.slice(1)}
+									{getStatusLabel(status)}
 								</SelectItem>
 							))}
 						</SelectContent>
@@ -135,7 +149,7 @@ export function FilterPanel({
 					<Label
 						htmlFor="minAmount"
 						className="text-xs font-medium text-muted-foreground">
-						Min Amount
+						{t('filters.minAmount')}
 					</Label>
 					<Input
 						id="minAmount"
@@ -151,12 +165,12 @@ export function FilterPanel({
 					<Label
 						htmlFor="maxAmount"
 						className="text-xs font-medium text-muted-foreground">
-						Max Amount
+						{t('filters.maxAmount')}
 					</Label>
 					<Input
 						id="maxAmount"
 						type="number"
-						placeholder="No limit"
+						placeholder={t('filters.noLimit')}
 						className="w-[120px]"
 						value={filters.maxAmount ?? ""}
 						onChange={handleMaxAmountChange}
@@ -170,20 +184,20 @@ export function FilterPanel({
 						onClick={clearFilters}
 						className="h-9">
 						<X className="mr-1 h-4 w-4" />
-						Clear
+						{t('filters.clear')}
 					</Button>
 				)}
 
 				<div className="ml-auto text-sm text-muted-foreground">
-					Showing{" "}
+					{t('filters.showing')}{" "}
 					<span className="font-medium text-foreground">
 						{filteredCount.toLocaleString()}
 					</span>{" "}
-					of{" "}
+					{t('filters.of')}{" "}
 					<span className="font-medium text-foreground">
 						{totalCount.toLocaleString()}
 					</span>{" "}
-					transactions
+					{t('filters.transactions')}
 				</div>
 			</div>
 		</div>
