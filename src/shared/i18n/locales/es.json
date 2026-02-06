@@ -36,7 +36,7 @@
   },
   "dashboard": {
     "header": {
-      "title": "Explorador de Conciliación",
+      "title": "Kallibra",
       "subtitle": "Analiza y concilia {{count}} transacciones",
       "refreshData": "Actualizar Datos"
     },

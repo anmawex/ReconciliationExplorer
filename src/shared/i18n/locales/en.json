@@ -36,7 +36,7 @@
   },
   "dashboard": {
     "header": {
-      "title": "Reconciliation Explorer",
+      "title": "Kallibra",
       "subtitle": "Analyze and reconcile {{count}} transactions",
       "refreshData": "Refresh Data"
     },

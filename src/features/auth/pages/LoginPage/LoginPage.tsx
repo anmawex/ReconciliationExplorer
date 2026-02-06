@@ -28,14 +28,14 @@ export const LoginPage: React.FC = () => {
                 <path d="M2 12l10 5 10-5" />
               </svg>
             </div>
-            <h2 className="logo-text">Reconciliation Explorer</h2>
+            <h2 className="logo-text">Kallibra</h2>
           </div>
 
           <LoginForm />
         </div>
 
         <footer className="login-page-footer">
-          <p>&copy; 2026 Reconciliation Explorer. Todos los derechos reservados.</p>
+          <p>&copy; 2026 Kallibra. Todos los derechos reservados.</p>
         </footer>
       </div>
     </div>
