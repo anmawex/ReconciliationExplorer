@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useNavigate } from 'react-router-dom';
-import { Input, ButtonLegacy } from '../../../../shared/components';
+import { Loader2 } from 'lucide-react';
+import { Input } from '../../../../shared/components';
+import { Button } from '../../../../shared/components/button';
 import { useAuth } from '../../hooks/useAuth';
 import { loginSchema, type LoginFormData } from '../../validators/auth.validators';
 import './LoginForm.css';
@@ -145,15 +147,15 @@ export const LoginForm: React.FC = () => {
         </div>
       </div>
 
-      <ButtonLegacy
+      <Button
         type="submit"
-        variant="primary"
         size="lg"
-        fullWidth
-        isLoading={isLoading}
+        className="w-full"
+        disabled={isLoading}
       >
-        Iniciar sesión
-      </ButtonLegacy>
+        {isLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+        {isLoading ? 'Iniciando sesión...' : 'Iniciar sesión'}
+      </Button>
 
       <div className="login-form-footer">
         <p className="signup-text">

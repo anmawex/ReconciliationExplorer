@@ -7,10 +7,14 @@ interface StatusDistributionChartProps {
   transactions: Transaction[];
 }
 
-const STATUS_COLORS: Record<TransactionStatus, string> = {
-  reconciled: 'hsl(142, 76%, 36%)',
-  pending: 'hsl(45, 93%, 47%)',
-  inconsistent: 'hsl(0, 84%, 60%)',
+// Helper to get status color from CSS variables
+const getStatusColor = (status: TransactionStatus): string => {
+  const colors: Record<TransactionStatus, string> = {
+    reconciled: 'hsl(var(--status-reconciled))',
+    pending: 'hsl(var(--status-pending))',
+    inconsistent: 'hsl(var(--status-inconsistent))',
+  };
+  return colors[status];
 };
 
 const STATUS_LABELS: Record<TransactionStatus, string> = {
@@ -74,7 +78,7 @@ export function StatusDistributionChart({ transactions }: StatusDistributionChar
                 {chartData.map((entry) => (
                   <Cell
                     key={entry.status}
-                    fill={STATUS_COLORS[entry.status]}
+                    fill={getStatusColor(entry.status)}
                     stroke="none"
                   />
                 ))}

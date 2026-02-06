@@ -26,20 +26,30 @@ export function findPotentialMatches(
   });
 }
 
+export interface ReconciliationStats {
+  total: number;
+  reconciled: number;
+  pending: number;
+  inconsistent: number;
+  reconciledPercentage: number;
+  totalAmount: number;
+  reconciledAmount: number;
+}
+
 /**
  * Calculate reconciliation statistics
  */
-export function getReconciliationStats(transactions: Transaction[]) {
+export function getReconciliationStats(transactions: Transaction[]): ReconciliationStats {
   const total = transactions.length;
   const reconciled = transactions.filter((t) => t.status === 'reconciled').length;
   const pending = transactions.filter((t) => t.status === 'pending').length;
   const inconsistent = transactions.filter((t) => t.status === 'inconsistent').length;
-  
+
   const totalAmount = transactions.reduce((sum, t) => sum + t.amount, 0);
   const reconciledAmount = transactions
     .filter((t) => t.status === 'reconciled')
     .reduce((sum, t) => sum + t.amount, 0);
-  
+
   return {
     total,
     reconciled,
