@@ -100,11 +100,13 @@ export function StatusDistributionChart({ transactions }: StatusDistributionChar
                   ];
                 }}
                 contentStyle={{
-                  backgroundColor: 'hsl(var(--background))',
+                  backgroundColor: 'hsl(var(--popover))',
                   border: '1px solid hsl(var(--border))',
                   borderRadius: '6px',
                   fontSize: '12px',
                 }}
+                itemStyle={{ color: 'hsl(var(--popover-foreground))' }}
+                labelStyle={{ color: 'hsl(var(--popover-foreground))' }}
               />
               <Legend
                 verticalAlign="middle"
