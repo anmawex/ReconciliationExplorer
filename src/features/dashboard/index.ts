@@ -1,5 +1,5 @@
 // Components
-export { StatsCard, RecentActivity } from './components';
+export { Header, StatsCard, RecentActivity } from './components';
 
 // Pages
 export { DashboardPage } from './pages/DashboardPage';

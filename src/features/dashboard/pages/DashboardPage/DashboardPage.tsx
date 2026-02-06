@@ -1,9 +1,9 @@
-import { Header } from '../../components/Header';
+import { Header } from '../../components';
 // import { FilterPanel } from '@/features/filters';
 // import { StatsSummary, StatusDistributionChart } from '@/features/insights';
 // import { TransactionsTable, useTransactions } from '@/features/transactions';
 
-const Index = () => {
+export const DashboardPage = () => {
   // const {
   //   filteredTransactions,
   //   filters,
@@ -44,5 +44,3 @@ const Index = () => {
     </div>
   );
 };
-
-export default Index;
