@@ -109,9 +109,9 @@
       "contact": "Contacta a nuestro equipo"
     },
     "registerModal": {
-      "title": "Solicitar Acceso",
-      "description": "Kallibra está actualmente en beta privada. Haz clic en confirmar para enviar un email solicitando acceso. Te responderemos en 24 horas.",
-      "confirm": "Enviar Solicitud"
+      "title": "¡Gracias por tu interés!",
+      "description": "Actualmente nos encontramos en una fase exclusiva de Beta MVP. Para garantizar la mejor experiencia, el acceso está restringido a usuarios autorizados. Por favor, selecciona una de las dos opciones a continuación (Kallibra Beta o Kallibra Personalizado) para solicitar tus credenciales directamente al desarrollador mediante nuestros canales de contacto.",
+      "confirm": "Aceptar"
     },
     "contactModal": {
       "title": "Contactar Ventas",

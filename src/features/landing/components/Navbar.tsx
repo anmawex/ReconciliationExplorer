@@ -29,7 +29,8 @@ export function Navbar({ onScrollTo }: NavbarProps) {
   };
 
   const handleRegisterConfirm = () => {
-    window.location.href = 'mailto:contact@kallibra.app?subject=Access%20Request%20-%20Kallibra&body=Hello,%0A%0AI%20would%20like%20to%20request%20access%20to%20Kallibra.%0A%0AName:%0ACompany:%0AEmail:%0A%0AThank%20you.';
+    setIsRegisterModalOpen(false);
+    onScrollTo('pricing');
   };
 
   return (
@@ -120,7 +121,7 @@ export function Navbar({ onScrollTo }: NavbarProps) {
         title={t('landing.registerModal.title')}
         description={t('landing.registerModal.description')}
         confirmText={t('landing.registerModal.confirm')}
-        cancelText={t('common.cancel')}
+        showCancel={false}
       />
     </>
   );

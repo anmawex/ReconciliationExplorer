@@ -11,6 +11,7 @@ export interface ModalProps {
   description?: string;
   confirmText?: string;
   cancelText?: string;
+  showCancel?: boolean;
   variant?: 'default' | 'danger';
 }
 
@@ -22,8 +23,10 @@ export const Modal: React.FC<ModalProps> = ({
   description,
   confirmText = 'Confirm',
   cancelText = 'Cancel',
+  showCancel = true,
   variant = 'default',
 }) => {
+
   // Close on Escape key
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
@@ -71,9 +74,11 @@ export const Modal: React.FC<ModalProps> = ({
         )}
 
         <div className="modal-footer">
-          <Button variant="outline" onClick={onClose}>
-            {cancelText}
-          </Button>
+          {showCancel && (
+            <Button variant="outline" onClick={onClose}>
+              {cancelText}
+            </Button>
+          )}
           {onConfirm && (
             <Button
               variant={variant === 'danger' ? 'destructive' : 'default'}
