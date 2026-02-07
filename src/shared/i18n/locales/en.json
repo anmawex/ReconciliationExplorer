@@ -10,6 +10,138 @@
     "error": "Error",
     "success": "Success"
   },
+  "landing": {
+    "nav": {
+      "home": "Home",
+      "features": "Features",
+      "highlights": "Highlights",
+      "pricing": "Pricing",
+      "login": "Login",
+      "register": "Request Access"
+    },
+    "hero": {
+      "badge": "New Release Available",
+      "titleLight": "Simplify your",
+      "titleBold": "Financial Reconciliation",
+      "description": "Automate transaction matching, eliminate manual errors, and gain real-time insights into your financial operations with our powerful reconciliation platform.",
+      "ctaPrimary": "Get Started",
+      "ctaSecondary": "Learn More",
+      "trustedBy": "finance teams trust Kallibra"
+    },
+    "features": {
+      "title": "Everything you need for seamless reconciliation",
+      "subtitle": "Powerful features designed to streamline your financial operations and eliminate manual reconciliation headaches.",
+      "items": {
+        "automation": {
+          "title": "Smart Automation",
+          "description": "Automatically match transactions across multiple sources using intelligent algorithms that learn from your patterns."
+        },
+        "security": {
+          "title": "Enterprise Security",
+          "description": "Bank-grade encryption and compliance with SOC 2 Type II, GDPR, and other regulatory requirements."
+        },
+        "analytics": {
+          "title": "Advanced Analytics",
+          "description": "Real-time dashboards and custom reports to track reconciliation status, trends, and anomalies."
+        },
+        "sync": {
+          "title": "Multi-Source Sync",
+          "description": "Connect banks, ERPs, payment providers, and custom sources with our flexible integration framework."
+        },
+        "audit": {
+          "title": "Complete Audit Trail",
+          "description": "Full transaction history with timestamps, user actions, and detailed change logs for compliance."
+        },
+        "realtime": {
+          "title": "Real-Time Processing",
+          "description": "Process thousands of transactions per second with instant matching and instant notifications."
+        }
+      }
+    },
+    "highlights": {
+      "title": "Why leading finance teams choose Kallibra",
+      "subtitle": "See how our platform transforms complex reconciliation workflows into streamlined, automated processes.",
+      "analytics": {
+        "title": "Powerful Analytics & Insights",
+        "description": "Get actionable insights with our comprehensive analytics dashboard. Track key metrics, identify trends, and make data-driven decisions to optimize your financial operations.",
+        "mockupTitle": "Analytics Dashboard",
+        "metric1": "127% increase in reconciliation efficiency",
+        "metric2": "98.5% transaction matching accuracy",
+        "metric3": "45% reduction in processing time"
+      },
+      "security": {
+        "title": "Enterprise-Grade Security",
+        "description": "Your financial data is protected with the highest security standards. We implement multiple layers of protection to ensure your data remains safe and compliant.",
+        "mockupTitle": "Security Center",
+        "feature1": "Bank-grade AES-256 encryption",
+        "feature2": "Multi-factor authentication",
+        "feature3": "Complete audit logging"
+      }
+    },
+    "pricing": {
+      "title": "Simple, transparent pricing",
+      "subtitle": "Choose the plan that fits your business needs. No hidden fees, no long-term contracts.",
+      "period": "month",
+      "popular": "Most Popular",
+      "starter": {
+        "name": "Starter",
+        "description": "Perfect for small teams getting started",
+        "cta": "Start Free Trial",
+        "features": {
+          "transactions": "Up to 10,000 transactions/month",
+          "sources": "3 data sources",
+          "users": "5 team members",
+          "support": "Email support",
+          "reports": "Basic reports"
+        }
+      },
+      "enterprise": {
+        "name": "Enterprise",
+        "price": "Custom",
+        "description": "For organizations with advanced needs",
+        "cta": "Contact Sales",
+        "features": {
+          "transactions": "Unlimited transactions",
+          "sources": "Unlimited data sources",
+          "users": "Unlimited team members",
+          "support": "24/7 priority support",
+          "api": "Full API access",
+          "sla": "99.9% SLA guarantee"
+        }
+      },
+      "questions": "Have questions?",
+      "contact": "Contact our team"
+    },
+    "registerModal": {
+      "title": "Request Access",
+      "description": "Kallibra is currently in private beta. Click confirm to send an email request for access. We'll get back to you within 24 hours.",
+      "confirm": "Send Request"
+    },
+    "contactModal": {
+      "title": "Contact Sales",
+      "description": "Click confirm to send an email to our sales team. We'll respond with a personalized quote within 24 hours.",
+      "confirm": "Send Email"
+    },
+    "footer": {
+      "tagline": "Intelligent financial reconciliation for modern businesses.",
+      "developer": {
+        "title": "Developer",
+        "portfolio": "Portfolio"
+      },
+      "resources": {
+        "title": "Resources",
+        "docs": "Documentation"
+      },
+      "legal": {
+        "title": "Legal",
+        "privacy": "Privacy Policy",
+        "terms": "Terms of Service"
+      },
+      "rights": "All rights reserved.",
+      "madeWith": "Made with",
+      "by": "by"
+    }
+  },
   "auth": {
     "login": {
       "title": "Welcome back",
@@ -25,7 +157,8 @@
       "submit": "Sign in",
       "submitting": "Signing in...",
       "noAccount": "Don't have an account?",
-      "signUp": "Sign up here"
+      "signUp": "Sign up here",
+      "backToHome": "Back to Home"
     },
     "logout": {
       "button": "Logout",

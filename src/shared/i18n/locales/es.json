@@ -10,6 +10,138 @@
     "error": "Error",
     "success": "Éxito"
   },
+  "landing": {
+    "nav": {
+      "home": "Inicio",
+      "features": "Características",
+      "highlights": "Destacados",
+      "pricing": "Precios",
+      "login": "Iniciar Sesión",
+      "register": "Solicitar Acceso"
+    },
+    "hero": {
+      "badge": "Nueva Versión Disponible",
+      "titleLight": "Simplifica tu",
+      "titleBold": "Conciliación Financiera",
+      "description": "Automatiza el cruce de transacciones, elimina errores manuales y obtén información en tiempo real sobre tus operaciones financieras con nuestra poderosa plataforma.",
+      "ctaPrimary": "Comenzar",
+      "ctaSecondary": "Saber Más",
+      "trustedBy": "equipos financieros confían en Kallibra"
+    },
+    "features": {
+      "title": "Todo lo que necesitas para una conciliación perfecta",
+      "subtitle": "Funcionalidades potentes diseñadas para optimizar tus operaciones financieras y eliminar los dolores de cabeza de la conciliación manual.",
+      "items": {
+        "automation": {
+          "title": "Automatización Inteligente",
+          "description": "Cruza automáticamente transacciones de múltiples fuentes usando algoritmos inteligentes que aprenden de tus patrones."
+        },
+        "security": {
+          "title": "Seguridad Empresarial",
+          "description": "Encriptación de nivel bancario y cumplimiento con SOC 2 Tipo II, GDPR y otros requisitos regulatorios."
+        },
+        "analytics": {
+          "title": "Analíticas Avanzadas",
+          "description": "Dashboards en tiempo real e informes personalizados para rastrear estados, tendencias y anomalías."
+        },
+        "sync": {
+          "title": "Sincronización Multi-Fuente",
+          "description": "Conecta bancos, ERPs, proveedores de pago y fuentes personalizadas con nuestro framework flexible."
+        },
+        "audit": {
+          "title": "Trazabilidad Completa",
+          "description": "Historial completo de transacciones con marcas de tiempo, acciones de usuario y registros detallados."
+        },
+        "realtime": {
+          "title": "Procesamiento en Tiempo Real",
+          "description": "Procesa miles de transacciones por segundo con cruce instantáneo y notificaciones inmediatas."
+        }
+      }
+    },
+    "highlights": {
+      "title": "Por qué los equipos financieros líderes eligen Kallibra",
+      "subtitle": "Descubre cómo nuestra plataforma transforma flujos de conciliación complejos en procesos automatizados.",
+      "analytics": {
+        "title": "Analíticas e Insights Potentes",
+        "description": "Obtén insights accionables con nuestro completo dashboard de analíticas. Rastrea métricas clave, identifica tendencias y toma decisiones basadas en datos.",
+        "mockupTitle": "Dashboard de Analíticas",
+        "metric1": "127% de aumento en eficiencia de conciliación",
+        "metric2": "98.5% de precisión en el cruce de transacciones",
+        "metric3": "45% de reducción en tiempo de procesamiento"
+      },
+      "security": {
+        "title": "Seguridad de Nivel Empresarial",
+        "description": "Tus datos financieros están protegidos con los más altos estándares de seguridad. Implementamos múltiples capas de protección.",
+        "mockupTitle": "Centro de Seguridad",
+        "feature1": "Encriptación AES-256 de nivel bancario",
+        "feature2": "Autenticación multifactor",
+        "feature3": "Registro completo de auditoría"
+      }
+    },
+    "pricing": {
+      "title": "Precios simples y transparentes",
+      "subtitle": "Elige el plan que se adapte a tu negocio. Sin costos ocultos, sin contratos a largo plazo.",
+      "period": "mes",
+      "popular": "Más Popular",
+      "starter": {
+        "name": "Inicial",
+        "description": "Perfecto para equipos pequeños que comienzan",
+        "cta": "Comenzar Prueba Gratis",
+        "features": {
+          "transactions": "Hasta 10,000 transacciones/mes",
+          "sources": "3 fuentes de datos",
+          "users": "5 miembros del equipo",
+          "support": "Soporte por email",
+          "reports": "Reportes básicos"
+        }
+      },
+      "enterprise": {
+        "name": "Empresarial",
+        "price": "Personalizado",
+        "description": "Para organizaciones con necesidades avanzadas",
+        "cta": "Contactar Ventas",
+        "features": {
+          "transactions": "Transacciones ilimitadas",
+          "sources": "Fuentes de datos ilimitadas",
+          "users": "Miembros del equipo ilimitados",
+          "support": "Soporte prioritario 24/7",
+          "api": "Acceso completo a API",
+          "sla": "Garantía SLA del 99.9%"
+        }
+      },
+      "questions": "¿Tienes preguntas?",
+      "contact": "Contacta a nuestro equipo"
+    },
+    "registerModal": {
+      "title": "Solicitar Acceso",
+      "description": "Kallibra está actualmente en beta privada. Haz clic en confirmar para enviar un email solicitando acceso. Te responderemos en 24 horas.",
+      "confirm": "Enviar Solicitud"
+    },
+    "contactModal": {
+      "title": "Contactar Ventas",
+      "description": "Haz clic en confirmar para enviar un email a nuestro equipo de ventas. Responderemos con una cotización personalizada en 24 horas.",
+      "confirm": "Enviar Email"
+    },
+    "footer": {
+      "tagline": "Conciliación financiera inteligente para negocios modernos.",
+      "developer": {
+        "title": "Desarrollador",
+        "portfolio": "Portafolio"
+      },
+      "resources": {
+        "title": "Recursos",
+        "docs": "Documentación"
+      },
+      "legal": {
+        "title": "Legal",
+        "privacy": "Política de Privacidad",
+        "terms": "Términos de Servicio"
+      },
+      "rights": "Todos los derechos reservados.",
+      "madeWith": "Hecho con",
+      "by": "por"
+    }
+  },
   "auth": {
     "login": {
       "title": "Bienvenido de nuevo",
@@ -25,7 +157,8 @@
       "submit": "Iniciar sesión",
       "submitting": "Iniciando sesión...",
       "noAccount": "¿No tienes una cuenta?",
-      "signUp": "Regístrate aquí"
+      "signUp": "Regístrate aquí",
+      "backToHome": "Volver al Inicio"
     },
     "logout": {
       "button": "Cerrar sesión",
