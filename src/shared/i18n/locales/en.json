@@ -79,34 +79,30 @@
       }
     },
     "pricing": {
-      "title": "Simple, transparent pricing",
-      "subtitle": "Choose the plan that fits your business needs. No hidden fees, no long-term contracts.",
-      "period": "month",
-      "popular": "Most Popular",
-      "starter": {
-        "name": "Starter",
-        "description": "Perfect for small teams getting started",
-        "cta": "Start Free Trial",
+      "title": "MVP Access & Custom Solutions",
+      "subtitle": "Be part of the early stage or get a tailored system for your needs.",
+      "beta": {
+        "name": "Kallibra Beta",
+        "price": "Free",
+        "priceSubtext": "during test period",
+        "cta": "Get Started",
         "features": {
-          "transactions": "Up to 10,000 transactions/month",
-          "sources": "3 data sources",
-          "users": "5 team members",
-          "support": "Email support",
-          "reports": "Basic reports"
+          "modules": "Full access to all MVP modules",
+          "clients": "Unlimited clients & invoices",
+          "feedback": "Direct feedback channel",
+          "upgrades": "Automated future upgrades"
         }
       },
-      "enterprise": {
-        "name": "Enterprise",
-        "price": "Custom",
-        "description": "For organizations with advanced needs",
-        "cta": "Contact Sales",
+      "custom": {
+        "name": "Custom Kallibra",
+        "price": "Tailored",
+        "priceSubtext": "to your needs",
+        "cta": "Contact",
         "features": {
-          "transactions": "Unlimited transactions",
-          "sources": "Unlimited data sources",
-          "users": "Unlimited team members",
-          "support": "24/7 priority support",
-          "api": "Full API access",
-          "sla": "99.9% SLA guarantee"
+          "bespoke": "Bespoke feature development",
+          "dedicated": "Dedicated private instance",
+          "earlyBeta": "Includes Early Beta access",
+          "priority": "24/7 Priority support"
         }
       },
       "questions": "Have questions?",

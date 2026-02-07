@@ -79,34 +79,30 @@
       }
     },
     "pricing": {
-      "title": "Precios simples y transparentes",
-      "subtitle": "Elige el plan que se adapte a tu negocio. Sin costos ocultos, sin contratos a largo plazo.",
-      "period": "mes",
-      "popular": "Más Popular",
-      "starter": {
-        "name": "Inicial",
-        "description": "Perfecto para equipos pequeños que comienzan",
-        "cta": "Comenzar Prueba Gratis",
+      "title": "Acceso MVP y Soluciones Personalizadas",
+      "subtitle": "Sé parte de la etapa inicial u obtén un sistema personalizado para tus necesidades.",
+      "beta": {
+        "name": "Kallibra Beta",
+        "price": "Gratis",
+        "priceSubtext": "durante período de prueba",
+        "cta": "Comenzar",
         "features": {
-          "transactions": "Hasta 10,000 transacciones/mes",
-          "sources": "3 fuentes de datos",
-          "users": "5 miembros del equipo",
-          "support": "Soporte por email",
-          "reports": "Reportes básicos"
+          "modules": "Acceso completo a todos los módulos MVP",
+          "clients": "Clientes y facturas ilimitados",
+          "feedback": "Canal directo de feedback",
+          "upgrades": "Actualizaciones automáticas futuras"
         }
       },
-      "enterprise": {
-        "name": "Empresarial",
-        "price": "Personalizado",
-        "description": "Para organizaciones con necesidades avanzadas",
-        "cta": "Contactar Ventas",
+      "custom": {
+        "name": "Kallibra Personalizado",
+        "price": "A Medida",
+        "priceSubtext": "según tus necesidades",
+        "cta": "Contactar",
         "features": {
-          "transactions": "Transacciones ilimitadas",
-          "sources": "Fuentes de datos ilimitadas",
-          "users": "Miembros del equipo ilimitados",
-          "support": "Soporte prioritario 24/7",
-          "api": "Acceso completo a API",
-          "sla": "Garantía SLA del 99.9%"
+          "bespoke": "Desarrollo de características a medida",
+          "dedicated": "Instancia privada dedicada",
+          "earlyBeta": "Incluye acceso Early Beta",
+          "priority": "Soporte prioritario 24/7"
         }
       },
       "questions": "¿Tienes preguntas?",
