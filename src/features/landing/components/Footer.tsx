@@ -8,8 +8,8 @@ export function Footer() {
 
   const footerLinks = {
     developer: [
-      { label: t('landing.footer.developer.portfolio'), href: 'https://anmawex.dev', external: true },
-      { label: 'LinkedIn', href: 'https://linkedin.com/in/anmawex', external: true },
+      { label: t('landing.footer.developer.portfolio'), href: 'https://anmawex.vercel.app/', external: true },
+      { label: 'LinkedIn', href: 'https://www.linkedin.com/in/angelcordero1003/', external: true },
       { label: 'GitHub', href: 'https://github.com/anmawex', external: true },
     ],
     resources: [
@@ -23,8 +23,8 @@ export function Footer() {
 
   const socialLinks = [
     { icon: Github, href: 'https://github.com/anmawex', label: 'GitHub' },
-    { icon: Linkedin, href: 'https://linkedin.com/in/anmawex', label: 'LinkedIn' },
-    { icon: Globe, href: 'https://anmawex.dev', label: 'Portfolio' },
+    { icon: Linkedin, href: 'https://www.linkedin.com/in/angelcordero1003/', label: 'LinkedIn' },
+    { icon: Globe, href: 'https://anmawex.vercel.app/', label: 'Portfolio' },
   ];
 
   return (
@@ -160,7 +160,7 @@ export function Footer() {
             <p className="text-sm text-muted-foreground">
               {t('landing.footer.madeWith')} ❤️ {t('landing.footer.by')}{' '}
               <a
-                href="https://anmawex.dev"
+                href="https://anmawex.vercel.app/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-primary hover:underline"
