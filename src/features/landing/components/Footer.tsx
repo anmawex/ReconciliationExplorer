@@ -13,7 +13,7 @@ export function Footer() {
       { label: 'GitHub', href: 'https://github.com/anmawex', external: true },
     ],
     resources: [
-      { label: t('landing.footer.resources.docs'), href: 'https://docs.kallibra.app', external: true },
+      { label: t('landing.footer.resources.docs'), href: '/docs', external: false },
     ],
     legal: [
       { label: t('landing.footer.legal.privacy'), href: '/privacy', external: false },

@@ -2,7 +2,8 @@ import React from 'react';
 import { BrowserRouter, Routes, Route, Navigate, Link } from 'react-router-dom';
 import { LoginPage, useAuth } from '../features/auth';
 import { DashboardPage } from '../features/dashboard';
-import { LandingPage } from '../features/landing';
+import { LandingPage, DocsPage } from '../features/landing';
+import { ScrollToTop } from '@/shared/components/ScrollToTop';
 
 
 // 404 Page
@@ -101,9 +102,11 @@ const LoginRoute: React.FC<ProtectedRouteProps> = ({ children }) => {
 export const AppRoutes: React.FC = () => {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Routes>
         {/* Public routes */}
         <Route path="/" element={<LandingPage />} />
+        <Route path="/docs" element={<DocsPage />} />
         <Route path="/privacy" element={<PrivacyPage />} />
         <Route path="/terms" element={<TermsPage />} />
         

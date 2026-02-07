@@ -238,5 +238,72 @@
     "bank": "Banco",
     "paymentProvider": "Proveedor de Pago",
     "erp": "ERP"
+  },
+  "docs": {
+    "header": {
+      "title": "Kallibra Docs",
+      "back": "Volver al Inicio"
+    },
+    "hero": {
+      "title": "Guía de Usuario",
+      "subtitle": "Aprende a sacar el máximo provecho de tu plataforma de conciliación financiera."
+    },
+    "beta": {
+      "title": "Fase Beta MVP",
+      "description": "Actualmente nos encontramos en una fase exclusiva de Beta. Esta documentación refleja las funcionalidades activas y la visión a corto plazo del producto."
+    },
+    "gettingStarted": {
+      "title": "Comenzando",
+      "access": {
+        "title": "Acceso a la Plataforma",
+        "description": "Kallibra opera actualmente bajo un modelo de acceso restringido para garantizar la calidad del servicio durante nuestra fase Beta.",
+        "public": "Usuarios Públicos",
+        "publicDesc": "Pueden solicitar acceso a través del botón \"Solicitar Acceso\" en nuestra página principal.",
+        "b2b": "Usuarios B2B/Enterprise",
+        "b2bDesc": "Ofrecemos instancias personalizadas. Contacta directamente para una demostración."
+      },
+      "firstSteps": {
+        "title": "Primeros Pasos",
+        "step1": "Dirígete a la página de Login.",
+        "step2": "Ingresa tu correo y contraseña provistos.",
+        "step3": "Accederás inmediatamente a tu Dashboard Principal."
+      }
+    },
+    "features": {
+      "title": "Características Principales",
+      "dashboard": {
+        "title": "Dashboard Inteligente",
+        "description": "Tu centro de control financiero con visión instantánea del estado de conciliación.",
+        "item1": "Métricas clave de volumen y estado",
+        "item2": "Gráficos de distribución de datos",
+        "item3": "Monitor de actividad reciente"
+      },
+      "transactions": {
+        "title": "Explorador de Transacciones",
+        "description": "Herramienta potente para análisis detallado con filtros avanzados.",
+        "item1": "Vista tabular detallada",
+        "item2": "Filtros por fuente, estado y monto",
+        "item3": "Búsqueda rápida por referencia"
+      },
+      "reconciliation": {
+        "title": "Conciliación Asistida",
+        "description": "Olvídate de buscar coincidencias manualmente. Al seleccionar una transacción pendiente, Kallibra analiza tus datos y te sugiere posibles coincidencias basadas en monto, fecha y referencia.",
+        "tag1": "Sugerencias Automáticas",
+        "tag2": "Acción Rápida"
+      }
+    },
+    "roadmap": {
+      "title": "El Futuro (Roadmap)",
+      "ai": { "title": "Automatización IA", "desc": "Aprobación automática de patrones aprendidos." },
+      "api": { "title": "Conectores API", "desc": "Integración nativa con Stripe, Plaid, SAP." },
+      "reports": { "title": "Reportes", "desc": "Informes PDF/Excel para auditoría." },
+      "roles": { "title": "Roles y Permisos", "desc": "Gestión granular para equipos." }
+    },
+    "support": {
+      "title": "¿Necesitas ayuda adicional?",
+      "description": "Estamos aquí para ayudarte. Si encuentras un error o tienes una sugerencia, contáctanos directamente.",
+      "github": "Reportar en GitHub",
+      "email": "Contactar Soporte"
+    }
   }
 }
